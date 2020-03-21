@@ -1,20 +1,27 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      Sueldo App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-input type="number" placeholder="Horas trabajadas" [(ngModel)]="horas"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="Precio por hora" [(ngModel)]="precio"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" color="primary" (click)="Total()">Calcular</ion-button>
+  <br>
+  <p>Elaborado por el master</p>
+  <h2>Resultados</h2>
+  <p>Bruto $ {{sueldoBruto.toFixed(2)}}</p>
+  <p>Liquido $ {{sueldoLiquido.toFixed(2)}}</p>
+  <p>ISSS $ {{descuentoISSS.toFixed(2)}}</p>
+  <p>AFP $ {{descuentoAFP.toFixed(2)}}</p>
+  <p>Renta $ {{descuentoRenta.toFixed(2)}}</p>
 </ion-content>
